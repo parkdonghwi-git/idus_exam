@@ -22,21 +22,10 @@ public class Member implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
-    @Column(nullable = false, length = 20)
-    @Pattern(regexp = "^[가-힣A-Za-z]+$")
     private String name;
-    @Pattern(regexp ="^[a-z]+$")
-    @Column(nullable = false, length = 30)
     private String nickName;
-    @Column(nullable = false)
-    @Pattern(regexp = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{10,}$")
-    @Size(min = 10)
     private String password;
-    @Pattern(regexp = "^(?!\\\\d+$)")
-    @Column(nullable = false, length = 20)
     private Long phoneNum;
-    @Pattern(regexp = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$")
-    @Column(nullable = false, length = 100)
     private String email;
     private String gender;
     private boolean enabled;
