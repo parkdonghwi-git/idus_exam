@@ -1,12 +1,8 @@
 package com.example.test.member;
 
-import com.example.test.member.model.Member;
 import com.example.test.member.model.MemberDto;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -16,6 +12,7 @@ public class MemberController {
 
     @PostMapping("/signup")
     public void signup(@RequestBody MemberDto.SignupRequest dto) {
-    memberService.signup(dto);
+        memberService.signup(dto);
+
     }
 }
